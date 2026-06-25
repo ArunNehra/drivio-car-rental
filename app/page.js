@@ -18,6 +18,7 @@ export default function Home() {
   const [contactMessage, setContactMessage] = useState('');
   const [formStatus, setFormStatus] = useState({ type: '', message: '' });
   const [loading, setLoading] = useState(false);
+  const [lastSubmitTime, setLastSubmitTime] = useState(null);
 
   // Featured Cars (starting from 999 per day)
   const featuredCars = [
@@ -110,6 +111,17 @@ export default function Home() {
   // Contact Form Submission (Google Apps Script Integration)
   const handleContactSubmit = async (e) => {
     e.preventDefault();
+
+    // Cooldown verification (60-second cooldown to throttle spammers/bots)
+    const now = Date.now();
+    if (lastSubmitTime && now - lastSubmitTime < 60000) {
+      const secondsLeft = Math.ceil((60000 - (now - lastSubmitTime)) / 1000);
+      setFormStatus({
+        type: 'error',
+        message: `You have submitted an inquiry recently. Please wait ${secondsLeft} seconds before trying again.`
+      });
+      return;
+    }
     
     // 1. Trim all string inputs
     const cleanName = contactName.trim();
@@ -173,6 +185,7 @@ export default function Home() {
         type: 'success',
         message: 'Your inquiry has been submitted successfully! We will contact you shortly and send a confirmation to your email/phone.'
       });
+      setLastSubmitTime(Date.now()); // Set timestamp to start cooldown period
       setContactName('');
       setContactPhone('');
       setContactEmail('');

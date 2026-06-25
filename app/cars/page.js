@@ -203,7 +203,7 @@ export default function FleetPage() {
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                 {filteredCars.map((car) => (
-                  <div key={car.id} style={{ display: 'grid', gridTemplateColumns: '300px 1fr', gap: '24px', backgroundColor: '#ffffff', borderRadius: '12px', border: '1px solid var(--border-color)', padding: '24px', overflow: 'hidden', boxShadow: 'var(--shadow-sm)' }}>
+                  <div key={car.id} className="car-item-card">
                     
                     {/* Visual Car Image */}
                     <div style={{ background: '#f1f5f9', borderRadius: '8px', display: 'flex', alignItems: 'center', justifycontent: 'center', padding: '20px', position: 'relative' }}>

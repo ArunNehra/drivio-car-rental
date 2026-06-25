@@ -154,36 +154,19 @@ export default function Home() {
       timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
     };
 
-    // Google Apps Script Web App URL from environment variable
-    const webhookUrl = process.env.NEXT_PUBLIC_SHEET_WEBHOOK_URL || '';
-
-    if (!webhookUrl) {
-      // Offline / Developer Mock Mode
-      setTimeout(() => {
-        setLoading(false);
-        setFormStatus({
-          type: 'success',
-          message: 'Inquiry details saved successfully! (Developer Mode: Configured safely and sanitized)'
-        });
-        // Clear inputs
-        setContactName('');
-        setContactPhone('');
-        setContactEmail('');
-        setContactMessage('');
-      }, 1200);
-      return;
-    }
-
     try {
-      // Send data to Apps Script Webhook
-      const response = await fetch(webhookUrl, {
+      // Send data to our secure server-side API proxy route (hides the Google Sheet URL from the client browser)
+      const response = await fetch('/api/inquiry', {
         method: 'POST',
-        mode: 'no-cors', // Apps Script requires no-cors configuration
         headers: {
-          'Content-Type': 'text/plain', // Prevents CORS preflight OPTIONS requests from the browser
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload),
       });
+
+      if (!response.ok) {
+        throw new Error('Inquiry submission failed on the server.');
+      }
 
       setLoading(false);
       setFormStatus({

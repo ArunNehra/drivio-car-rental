@@ -180,7 +180,7 @@ export default function Home() {
         method: 'POST',
         mode: 'no-cors', // Apps Script requires no-cors configuration
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain', // Prevents CORS preflight OPTIONS requests from the browser
         },
         body: JSON.stringify(payload),
       });

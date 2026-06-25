@@ -612,6 +612,27 @@ export default function Home() {
                 </select>
               </div>
 
+              <div className="form-row">
+                <div className="form-group">
+                  <label className="form-label">Pick-up Date</label>
+                  <input 
+                    type="date" 
+                    className="form-control" 
+                    value={pickupDate}
+                    onChange={(e) => setPickupDate(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label className="form-label">Return/Drop-off Date</label>
+                  <input 
+                    type="date" 
+                    className="form-control" 
+                    value={returnDate}
+                    onChange={(e) => setReturnDate(e.target.value)}
+                  />
+                </div>
+              </div>
+
               <div className="form-group">
                 <label className="form-label">Message / Details</label>
                 <textarea 

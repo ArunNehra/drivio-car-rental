@@ -1,6 +1,7 @@
 import './globals.css';
 import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
   title: 'Drivio Selfdrive Cars | Self Drive Car Rental in Zirakpur, Chandigarh & Tricity',
@@ -140,6 +141,7 @@ export default function RootLayout({ children }) {
           </div>
         </footer>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

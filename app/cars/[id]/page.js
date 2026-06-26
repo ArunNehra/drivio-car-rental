@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 // Fleet details dictionary
 const carsDb = {
@@ -145,15 +146,7 @@ export default function CarDetailPage({ params }) {
   const car = carsDb[id];
 
   if (!car) {
-    return (
-      <div style={{ paddingTop: '150px', paddingBottom: '100px', textAlign: 'center' }}>
-        <div className="container">
-          <h2>Car Not Found</h2>
-          <p style={{ margin: '16px 0' }}>The car model you are looking for does not exist in our catalog.</p>
-          <Link href="/cars" className="btn btn-primary">Browse All Cars</Link>
-        </div>
-      </div>
-    );
+    notFound();
   }
 
   // Create JSON-LD schema dynamically for SEO Rich Results

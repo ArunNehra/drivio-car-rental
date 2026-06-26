@@ -34,6 +34,20 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/sitemap%20xml',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
+      {
+        source: '/sitemap xml',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig

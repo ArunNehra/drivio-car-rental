@@ -1046,3 +1046,57 @@ button, input, select, textarea {
   }
 }
 
+/* About Section Responsive Stats Grid */
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Responsive Section Titles */
+.section-title {
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: var(--font-title);
+  color: var(--primary-blue-dark);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px !important;
+  }
+  .contact-info-title {
+    font-size: 28px !important;
+  }
+}
+
+/* Features checklist grid on details page */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 560px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

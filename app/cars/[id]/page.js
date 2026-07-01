@@ -276,7 +276,7 @@ export default function CarDetailPage({ params }) {
             {/* Features Checklist */}
             <div style={{ backgroundColor: '#ffffff', padding: '32px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
               <h3 style={{ fontSize: '20px', marginBottom: '16px' }}>Included Features</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+              <div className="features-grid">
                 {car.features.map((feature, idx) => (
                   <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: '500' }}>
                     <span style={{ color: 'var(--accent-green-dark)', fontWeight: 'bold' }}>✓</span>

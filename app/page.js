@@ -425,14 +425,14 @@ export default function Home() {
       <section id="about" className="section-padding" style={{ background: '#f8fafc' }}>
         <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
           <span className="hero-tagline" style={{ backgroundColor: 'var(--accent-green-light)', color: 'var(--accent-green-dark)' }}>About Drivio</span>
-          <h2 style={{ fontSize: '36px', marginBottom: '20px', marginTop: '10px' }}>Your Trusted Selfdrive Partner in Zirakpur & Tricity</h2>
+          <h2 className="section-title">Your Trusted Selfdrive Partner in Zirakpur & Tricity</h2>
           <p style={{ fontSize: '16px', color: 'var(--text-muted)', lineHeight: '1.9', marginBottom: '24px', textAlign: 'justify' }}>
             <strong>Drivio Selfdrive Cars</strong> is a trusted self-drive car rental company based in Zirakpur, offering affordable, reliable, and premium self-drive car rentals for individuals, families, tourists, and corporate travelers. We understand that every journey is unique, which is why we provide a diverse fleet of well-maintained vehicles, including hatchbacks, sedans, SUVs, and premium cars, to suit every travel need and budget. Whether you need a car for a weekend getaway, business trip, airport transfer, or long-distance road trip, Drivio Selfdrive Cars delivers a seamless and hassle-free rental experience.
           </p>
           <p style={{ fontSize: '16px', color: 'var(--text-muted)', lineHeight: '1.9', marginBottom: '32px', textAlign: 'justify' }}>
             At Drivio Selfdrive Cars, customer satisfaction is our top priority. Our vehicles are regularly serviced, thoroughly sanitized, and equipped to ensure maximum safety, comfort, and performance. With transparent pricing, easy booking, flexible rental plans, and dedicated customer support, we strive to make self-drive car rental in Zirakpur, Chandigarh, Mohali, Panchkula, and nearby areas convenient and affordable for everyone.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginTop: '30px' }}>
+          <div className="about-stats-grid">
             <div style={{ padding: '16px', background: '#ffffff', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
               <h4 style={{ fontSize: '28px', color: 'var(--primary-blue)' }}>100%</h4>
               <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Sanitized Cars</span>
@@ -459,7 +459,7 @@ export default function Home() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px' }}>
             <div>
               <span className="hero-tagline">Our Fleet Catalog</span>
-              <h2 style={{ fontSize: '36px', marginTop: '10px' }}>Select Your Perfect Ride</h2>
+              <h2 className="section-title">Select Your Perfect Ride</h2>
             </div>
             <Link href="/cars" className="btn btn-outline">View All Cars</Link>
           </div>
@@ -674,7 +674,7 @@ export default function Home() {
         <div className="container" style={{ maxWidth: '800px' }}>
           <div style={{ textAlign: 'center', marginBottom: '50px' }}>
             <span className="hero-tagline">Got Questions?</span>
-            <h2 style={{ fontSize: '36px', marginTop: '10px' }}>Frequently Asked Questions</h2>
+            <h2 className="section-title">Frequently Asked Questions</h2>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
